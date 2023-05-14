@@ -48,10 +48,16 @@ if not os.path.exists(newdir1):
 if not os.path.exists(newdir2):
     os.makedirs(newdir2)
 
+#Removes the Fixed folder and a possible desktop.ini (hidden windows config file)
 if "Fixed" in FormattedNameList:
     FormattedNameList.remove("Fixed")
 if "Fixed" in ConvertedNameList:
     ConvertedNameList.remove("Fixed")
+if "desktop.ini" in FormattedNameList:
+    FormattedNameList.remove("desktop.ini")
+if "desktop.ini" in ConvertedNameList:
+    ConvertedNameList.remove("desktop.ini")
+    
 #Iterates through the list, making changes as necessary
 for FormattedName in FormattedNameList:
     ConvertedName = FormattedName.replace(' NonConverted',"")
